@@ -1,4 +1,3 @@
-<!-- src/views/PopularMovies.vue -->
 <script setup>
 import { ref, onMounted } from "vue";
 import MovieService from "@/api/movieService";
@@ -20,8 +19,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="p-6">
-    <h1 class="text-3xl font-bold mb-6">Popular Movies</h1>
+  <div class="p-6 bg-black min-h-screen">
+    <h1 class="text-3xl font-bold mb-6 text-white">Popular Movies</h1>
 
     <!-- Loading -->
     <div v-if="loading" class="text-gray-400">Loading...</div>
@@ -34,24 +33,25 @@ onMounted(async () => {
     <!-- Movie List -->
     <div
       v-if="!loading && !error"
-      class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4"
+      class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"
     >
       <div
         v-for="movie in movies"
         :key="movie.id"
-        class="bg-white rounded shadow p-2 hover:shadow-lg transition"
+        class="bg-white/10 backdrop-blur-md border border-white/20 
+               rounded-xl p-3 shadow-md hover:bg-white/20 transition"
       >
         <img
           :src="`https://image.tmdb.org/t/p/w300${movie.poster_path}`"
-          class="w-full rounded"
+          class="w-full rounded-lg"
           alt="Poster"
         />
 
-        <h2 class="font-semibold mt-2 text-sm line-clamp-2">
+        <h2 class="font-semibold mt-2 text-sm text-white line-clamp-2">
           {{ movie.title }}
         </h2>
 
-        <p class="text-gray-500 text-xs">
+        <p class="text-gray-300 text-xs">
           {{ movie.release_date }}
         </p>
       </div>
@@ -59,7 +59,7 @@ onMounted(async () => {
   </div>
 </template>
 
+
 <style scoped>
-/* optional */
 </style>
 
