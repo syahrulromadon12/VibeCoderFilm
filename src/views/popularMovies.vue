@@ -38,8 +38,10 @@ onMounted(async () => {
       <div
         v-for="movie in movies"
         :key="movie.id"
-        class="bg-white/10 backdrop-blur-md border border-white/20 
-               rounded-xl p-3 shadow-md hover:bg-white/20 transition"
+        class="bg-white/10 border border-white/20
+              rounded-xl p-3 shadow-md
+              transform-gpu will-change-transform
+              hover:bg-white/20 transition-colors duration-200"
       >
         <img
           :src="`https://image.tmdb.org/t/p/w300${movie.poster_path}`"
