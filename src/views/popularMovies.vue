@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import MovieService from "@/api/movieService";
+import MovieCard from "@/components/MovieCard.vue";
 
 const movies = ref([]);
 const loading = ref(true);
@@ -32,31 +33,14 @@ onMounted(async () => {
 
     <!-- Movie List -->
     <div
-      v-if="!loading && !error"
+      v-else
       class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"
     >
-      <div
+      <MovieCard
         v-for="movie in movies"
         :key="movie.id"
-        class="bg-white/10 border border-white/20
-              rounded-xl p-3 shadow-md
-              transform-gpu will-change-transform
-              hover:bg-white/20 transition-colors duration-200"
-      >
-        <img
-          :src="`https://image.tmdb.org/t/p/w300${movie.poster_path}`"
-          class="w-full rounded-lg"
-          alt="Poster"
-        />
-
-        <h2 class="font-semibold mt-2 text-sm text-white line-clamp-2">
-          {{ movie.title }}
-        </h2>
-
-        <p class="text-gray-300 text-xs">
-          {{ movie.release_date }}
-        </p>
-      </div>
+        :movie="movie"
+      />
     </div>
   </div>
 </template>

@@ -6,8 +6,8 @@ import { RouterLink, RouterView } from "vue-router";
   <div class="bg-black min-h-screen text-white">
 
     <!-- NAVBAR ala Netflix -->
-    <header class="fixed top-0 left-0 w-full h-16 bg-black/70 backdrop-blur-md flex items-center px-10 z-50">
-      
+    <header class="fixed top-0 left-0 w-full h-16 bg-black/70 backdrop-blur-md flex justify-content-between items-center px-10 z-50">
+
       <div class="text-red-600 font-extrabold text-2xl tracking-wide mr-10">
         VibeCoderFilm
       </div>
