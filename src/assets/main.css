@@ -1,2 +1,18 @@
 /* @import './base.css'; */
 @import "tailwindcss";
+
+/*
+ * Custom Utilities
+ *
+ * Best Practice: Definisikan custom utility classes di sini
+ * untuk hal-hal yang Tailwind belum support out-of-the-box.
+ */
+
+/* Hide scrollbar tapi tetap bisa scroll — Netflix style */
+@utility scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+}

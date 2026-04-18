@@ -42,7 +42,7 @@ import { RouterLink, RouterView } from "vue-router";
     </header>
 
     <!-- CONTENT -->
-    <main class="pt-16 px-10">
+    <main class="pt-16">
       <RouterView />
     </main>
 
